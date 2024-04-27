@@ -51,6 +51,12 @@ public class App {
         
         event = ctx.getBean(Event.class);
         logEvent(null, event, "Some event for 3");
+
+        event = ctx.getBean(Event.class);
+        logEvent(EventType.DbINFO, event, "Some event for database, but this is unique");
+
+        event = ctx.getBean(Event.class);
+        logEvent(EventType.FileINFO, event, "Some event for file, but he is preccious");
     }
     
     public App() {}
